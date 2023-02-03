@@ -1,0 +1,49 @@
+README 
+
+La fonction --help permet de répondre aux interrogations de l’utilisateur, ce dernier appelle cette fonction en tapant –help dans le terminal. S’affiche ensuite les différentes aides proposées : 
+
+-t1 pour afficher les températures minimales, maximales et moyennes par station 
+-t2 pour afficher les températures moyennes par date et heure, moyenne sur toutes les stations 
+-t3 pour afficher les températures par date et heure par station, triés par ordre chronologique puis croissant de la station  
+ 
+-p1 pour afficher les pressions minimales, maximales et moyennes par station 
+-p2 pour afficher les pressions moyennes par date et heure, moyenne sur toutes les stations 
+-p3 pour afficher les pressions par date et heure par station, triés par ordre chronologique puis croissant de la station  
+-w pour afficher l’orientation et la vitesse moyenne des vents pour chaque station 
+-h pour afficher l’altitude de chaque station triée par ordre décroissant 
+-m pour afficher l’humidité maximale par station triées par ordre décroissant 
+
+-F pour la France 
+-G pour la Guyanne 
+-S pour St Pierre et Miquelon 
+-A pour les Antilles 
+-O pour l'Océan indien 
+-Q pour l’Antarctique 
+ 
+--tab pour le tri par tableau 
+--ABR pour le tri par ABR 
+
+--AVL pour le tri par AVL 
+-d<min><max> pour afficher la date sous forme YYYY-MM-DD 
+
+ 
+
+La fonction vérification permet de vérifier que l’argument rentré corresponde bien à ceux attendus et si non il redemande à l’utilisateur de saisir un argument valide. 
+
+ 
+
+L’option humidité affiche grâce à un diagramme la position de l’altitude par rapport aux coordonnées des stations 
+
+L’option altitude affiche grâce à un diagramme la longitude et latitude 
+
+L’option vent affiche un diagramme de longitude et latitude 
+
+ 
+
+ 
+
+Le gnuplot température permet d’afficher les graphiques de température, tout comme le gnuplot pression permet d’afficher les graphiques de pression. 
+
+ 
+
+Tant que la fenêtre de l’image affichée n’est pas, le programme ne reprend pas. 
