@@ -24,8 +24,8 @@ Pliste tete;
 Pliste queue;
 }sfile;
 
-pArbre supFG(pArbre a);
-pArbre supFD(pArbre a);
+pArbre supFG(pArbre a);//on défini la fonction supp fg
+pArbre supFD(pArbre a);//on défini la fonction supp fd
 pArbre creerArbre(int a){
 pArbre noeud =malloc(sizeof(Arbre));
 noeud->elmt=a;
@@ -34,7 +34,7 @@ noeud->fd=NULL;
 return noeud;
 }
 
-int estVide(pArbre a){
+int estVide(pArbre a){//vérifie su k'arbre est nul
 if(a==NULL){
 return 1;
 }
@@ -72,7 +72,7 @@ exit(1);
 }
 else if(a->fg==NULL){
 return 0;
-}
+}//retourne 0 si l'arbre n'a pas de fg
 else{
 return 1;
 }
@@ -84,7 +84,7 @@ printf("arbre vide\n");
 exit(1);
 }
 else if(a->fd==NULL){
-return 0;
+return 0;//retourne 0 si l'arbre n'a pas de fd
 }
 else{
 return 1;
@@ -97,7 +97,7 @@ a=creerArbre(e);
 return 0;
 }
 else if(existefilsGauche(a)==0){
-a->fg=creerArbre(e);
+a->fg=creerArbre(e);//ajoute un fg
 return 1;
 }
 else{
@@ -111,7 +111,7 @@ a=creerArbre(e);
 return 0;
 }
 else if(existefilsDroit(a)==0){
-a->fd=creerArbre(e);
+a->fd=creerArbre(e);//ajoute un fd
 return 1;
 }
 else{
@@ -120,7 +120,7 @@ return 0;
 }
 
 void traiter(int elmt){
-printf("%d\n",elmt);
+printf("%d\n",elmt);//affiche l'élément
 }
 
 void recursifprefixe(pArbre a){
@@ -129,7 +129,7 @@ traiter(element(a));
 recursifprefixe(a->fg);
 recursifprefixe(a->fd);
 }
-}
+}//parcourt l'arbre (centre puis gauche puis droite)
 
 void recursifpostfixe(pArbre a){
 if(a!=NULL){
@@ -166,12 +166,12 @@ exit(1);
 else if(existefilsGauche(a)==1){
 if(existefilsGauche(a->fg)==1){
 supFG(a->fg);
-}
+}// on supprime le fg si il y en a un
 if(existefilsDroit(a->fg)==1){
 supFD(a->fg);
-}
-free(a->fg);
-a->fg=NULL;
+}// on supprime le fg si il y en a un
+free(a->fg);//on libére l'espace alloué au fg
+a->fg=NULL;//il n'y a plus de fg
 }
 }
 
@@ -182,11 +182,11 @@ printf("error arbre vide\n");
 else if(existefilsDroit(a)==1){
 if(existefilsGauche(a->fd)==1){
 supFG(a->fd);
-}
+}// on supprime le fd si il y en a un
 if(existefilsDroit(a->fd)==1){
 supFD(a->fd);
-}
-free(a->fd);
+}// on supprime le fd si il y en a un
+free(a->fd);//libère l'espace
 a->fd=NULL;
 }
 }
